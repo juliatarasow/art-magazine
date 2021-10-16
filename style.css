@@ -1,0 +1,260 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Frank+Ruhl+Libre&display=swap');
+
+/*reset css*/
+*, *::before, *::after {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62,5%;
+}
+body {
+    font-family: 'Frank Ruhl Libre', serif;
+}
+a {
+    color: black;
+}
+
+/* Navigation */
+nav {
+    height: 4rem;
+    background: black;
+    color: white;
+    letter-spacing: 0.1em;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 22;
+}
+nav a, .search {
+    color: white;
+    line-height: 4rem;
+    padding:0 2rem;
+    font-size: 1em;
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+}
+.search {
+    display: flex;
+    align-self: flex-end;
+}
+nav .dropdown {
+    display: none;
+}
+nav a:hover, .search:hover {
+    color: yellow;
+}
+
+/* Logo */
+header {
+    max-height: 500px;
+}
+.logo {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+}
+.logo div:first-child {
+    font-size: 12vw;
+    letter-spacing: -0.1em;
+}
+.logo div:last-child {
+    font-size: 19vw;
+    letter-spacing: -0.1em;
+    line-height: 0.5em;
+}
+.logo div:nth-of-type(2) {
+    padding-top: -10%;
+}
+
+/* ---Magazine-Page--- */
+.magazine-page {
+    position: absolute;
+    top: 13em;
+}
+/* --Section 1-- */
+.magazine-page main .sec1 {
+    width: 100%;
+    display: flex;
+    margin: 0 10px;
+}
+h4, .h6, .h7 {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    color: #1f1f1f;
+}
+h4 {
+    font-size: 40px;
+    padding: 10px 0;
+}
+/* -Figure- */
+.magazine-page main .sec1 figure {
+    flex-basis: 50%;
+    padding: 10px;
+}
+.magazine-page main .sec1 figure a .content {
+    padding: 16px 16px 0 0;
+    margin: 0 0 -32px;
+    background: white;
+    width: 90%;
+    position: relative;
+    top: -4.2rem;
+}
+/* Image */
+.magazine-page main .sec1 figure a .image img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
+.magazine-page main .sec1 figure a .content p {
+    padding-top: 30px;
+}
+.magazine-page main .sec1 figure:nth-of-type(1) {
+    padding-top: 20rem;
+}
+img:hover {
+    transform: scale(1.5);
+    transition: 15s;
+}
+figure a .image {
+    overflow: hidden;
+}
+
+/* Arrow Down */
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+
+    border-top: 30px solid black;
+    transform: scaleX(3);
+}
+.load-more {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+.load-more p {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    padding: 10px 36px;
+}
+.load-more p:hover {
+    background: yellow;
+}
+/* --Section 2-- */
+.magazine-page main .sec2 {
+    width: 100%;
+    display: flex;
+    padding: 30px 40px;
+}
+/* -Figure- */
+.magazine-page main .sec2 figure {
+    flex-basis: 33.33%;
+    padding: 0 10px;
+}
+.sec2 figure a .content h4 {
+    font-size: 26px;
+}
+/* Image */
+.magazine-page main .sec2 figure a .image img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+
+/* Footer */
+footer {
+    height: 5rem;
+    background-color: black;
+
+}
+/* Breakpoint at 1221px */
+@media screen and (max-width: 1284px) {
+    /* Navigation */
+    nav {
+        display: flex;
+    }
+    .pencil {
+        order: 2;
+    }
+    .search {
+        order: 3;
+    }
+    nav .navcontent {
+        display: none;
+    }
+    nav .dropdown {
+        display: flex;
+        overflow: hidden;
+        line-height: 4rem;
+        font-size: 2em;
+    }
+    nav .dropdown .dropdown-content {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 4rem;
+        background: black;
+    }
+    nav .dropdown .dropdown-content .search {
+        display: none;
+    }
+    nav .dropdown .dropdown-content a {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        font-size: 0.8em;
+    }
+    nav .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    nav div {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+/* Breakpoint 769px*/
+@media screen and (max-width: 769px) {
+    .magazine-page main .sec1, .sec2 {
+        flex-direction: column;
+    }
+    /* Logo */
+    .logo div:first-child {
+        font-size: 26vw;
+    }
+    .logo div:last-child {
+        font-size: 41vw;
+    }
+
+}
+
+/* Breakpoint at 530px */
+@media screen and (max-width: 530px) {
+    /* Navigation */
+    nav .search {
+        display: none;
+    }
+    nav .dropdown .dropbtn {
+        padding-right: 2rem;
+    }
+    nav .dropdown:hover .dropdown-content>.search {
+        display: block;
+    }
+    .pencil {
+        order: 1;
+    }
+    nav .dropdown {
+        order: 2;
+        text-align: right;
+    }
+    nav .dropdown .dropbtn #icon {
+        padding: 0px;
+    }
+}
